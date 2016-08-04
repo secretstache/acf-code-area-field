@@ -229,13 +229,16 @@ class acf_field_code_area_field extends acf_field {
     $version = $this->settings['version'];
 
     // register & include JS
-    wp_register_script( 'acf-input-code_area_field_js', "{$url}assets/js/codemirror.js", array('acf-input'), $version );
+    wp_register_script( 'acf-input-code_area_field_js', $url.'assets/js/codemirror.js', array('acf-input'), $version );
     wp_enqueue_script('acf-input-code_area_field_js');
-    wp_enqueue_script( 'acf-input-code-field-codemirror-css', "{$dir}vendors/codemirror/mode/css/css.js" );
-    wp_enqueue_script( 'acf-input-code-field-codemirror-js', "{$dir}vendors/codemirror/mode/javascript/javascript.js" );
-    wp_enqueue_script( 'acf-input-code-field-codemirror-htmlmixed', "{$dir}vendors/ccodemirror/mode/htmlmixed/htmlmixed.js" );
-    wp_enqueue_script( 'acf-input-code-field-codemirror-showhint', "{$dir}vendors/codemirror/addon/hint/show-hint.js" );
-    wp_enqueue_script( 'acf-input-code-field-codemirror-htmlhint', "{$dir}vendors/codemirror/addon/hint/html-hint.js" );
+    wp_enqueue_script( 'acf-input-code-field-codemirror-css', $url.'assets/vendors/codemirror/mode/css/css.js' );
+    wp_enqueue_script( 'acf-input-code-field-codemirror-js', $url.'assets/vendors/codemirror/mode/javascript/javascript.js' );
+    wp_enqueue_script( 'acf-input-code-field-codemirror-xml', $url.'assets/vendors/codemirror/mode/xml/xml.js' );
+    wp_enqueue_script( 'acf-input-code-field-codemirror-htmlmixed', $url.'assets/vendors/codemirror/mode/htmlmixed/htmlmixed.js' );
+    wp_enqueue_script( 'acf-input-code-field-codemirror-showhint', $url.'assets/vendors/codemirror/addon/hint/show-hint.js' );
+    wp_enqueue_script( 'acf-input-code-field-codemirror-htmlhint', $url.'assets/vendors/codemirror/addon/hint/html-hint.js' );
+    wp_enqueue_script( 'acf-input-code-field-codemirror-runmode', $url.'assets/vendors/codemirror/addon/runmode/runmode.js' );
+    wp_enqueue_script( 'acf-input-code-field-codemirror-colorize', $url.'assets/vendors/codemirror/addon/runmode/colorize.js' );
 
     // register & include CSS
     wp_register_style( 'acf-input-code_area_field', "{$url}assets/css/codemirror.css", array('acf-input'), $version );
